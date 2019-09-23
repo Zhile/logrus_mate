@@ -18,6 +18,6 @@ func NewJSONFormatter(config config.Configuration) (formatter logrus.Formatter, 
 	if config != nil {
 		format = config.GetString("timestamp_format")
 	}
-	formatter = &logrus.JSONFormatter{TimestampFormat: format}
+	formatter = &logrus.JSONFormatter{TimestampFormat: format, DisableTimestamp: false}
 	return
 }
